@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body {
+            font: normal 1.2em arial;
+        }
+        input {
+            font-size: 1em;
+            border-radius: 10px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Em que País você mora ?</h1>
+    <input type="text" name="txtpa" id="txtpa">
+    <input type="button" value="Enviar" onclick="moradia()">
+    <div id="res"></div>
+
+    <script>
+        function moradia() {
+            var txtp = document.querySelector('input#txtpa')
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<p>Vivendo em ${txtp.value}</p>`
+            if (txtp.value == 'Brasil'  || txtp.value == 'brasil') {
+                res.innerHTML += `Você é Brasileiro!` 
+            } else {
+                res.innerHTML += 'Você é Estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>
