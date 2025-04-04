@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas</title>
+    <style>
+        body {
+            font: normal 1.2em arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Que horas são ?</h1>
+    Para saber quantas horas são clique <input type="button" value="Aqui" onclick="Hatuais()">
+    <div id="resp">
+        
+    </div>
+    <script>
+        function Hatuais() {
+        var agora = new Date()
+        var horas = agora.getHours()
+        var resp = document.getElementById('resp')
+        resp.innerHTML = `<p>Agora são exatamente ${horas} horas.</p>`
+        if (horas < 12) {
+            resp.innerHTML += '<p>Bom Dia!</p>'
+        } else if (horas <=18) {
+            resp.innerHTML += '<p>Boa Tarde!</p>'
+        } else {
+            resp.innerHTML += '<p>Boa Noite!</p>'
+        }
+
+    }
+    </script>
+</body>
+</html>

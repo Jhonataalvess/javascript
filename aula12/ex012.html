@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade para votar no Brasil</title>
+    <style>
+        body {
+            font: normal 1.1em arial;
+        }
+        input {
+            width: 90px;
+            font: normal 16pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual idade para votar no Brasil ?</h1>
+    Qual a sua idade ? <input type="number" name="idade" id="idade">
+    <input type="button" value="Verificar" onclick="Ivotar()">
+    <div id="resp">
+
+    </div>
+    <script>
+        function Ivotar() {
+            var idd = document.getElementById('idade')
+            var resp = document.querySelector('div#resp')
+            var iddn = Number(idd.value)
+            resp.innerHTML = `<p>Você tem ${iddn} anos.</p>`
+            if (iddn < 16) {
+                resp.innerHTML += 'Não vota' 
+            } else if (iddn < 18 || iddn > 67) {
+                resp.innerHTML += 'Voto opcional'
+            } else if (iddn >= 18) {
+                resp.innerHTML += 'Voto obrigatório'
+            }
+        }
+    </script>
+</body>
+</html>
